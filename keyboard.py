@@ -4,7 +4,7 @@ from aiogram import types
 
 menu = types.ReplyKeyboardMarkup(resize_keyboard=True)
 menu.add(
-    types.KeyboardButton('👑 Админ-панель')
+    types.KeyboardButton('Админ-панель')
 )
 
 adm = types.ReplyKeyboardMarkup(resize_keyboard=True)
