@@ -9,9 +9,9 @@ menu.add(
 
 adm = types.ReplyKeyboardMarkup(resize_keyboard=True)
 adm.add(
-    types.KeyboardButton('👿 ЧС'),
-    types.KeyboardButton('✅ Добавить в ЧС'),
-    types.KeyboardButton('❎ Убрать из ЧС')
+    types.KeyboardButton('ЧС'),
+    types.KeyboardButton('Добавить в ЧС'),
+    types.KeyboardButton('Убрать из ЧС')
 )
 adm.add(types.KeyboardButton('💬 Рассылка'))
 adm.add('⏪ Назад')
