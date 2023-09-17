@@ -38,7 +38,7 @@ async def start(message: types.Message):
         await message.answer('Вы были заблокированны!') # пишет если человек заблокирован
 
 
-@dp.message_handler(content_types=['text'], text='👑 Админ-панель')
+@dp.message_handler(content_types=['text'], text='Админ-панель')
 async def handfler(message: types.Message, state: FSMContext):
 	func.join(chat_id=message.chat.id)
 	q.execute(f"SELECT block FROM users WHERE user_id = {message.chat.id}")
@@ -51,7 +51,7 @@ async def handfler(message: types.Message, state: FSMContext):
 async def handledr(message: types.Message, state: FSMContext):
 	await message.answer('Добро пожаловать!', reply_markup=kb.menu)
 
-@dp.message_handler(content_types=['text'], text='👿 ЧС')
+@dp.message_handler(content_types=['text'], text='ЧС')
 async def handlaer(message: types.Message, state: FSMContext):
 	func.join(chat_id=message.chat.id)
 	q.execute(f"SELECT block FROM users WHERE user_id = {message.chat.id}")
@@ -68,7 +68,7 @@ async def handlaer(message: types.Message, state: FSMContext):
 			ids = '\n'.join(map(str, sl))
 			await message.answer(f'ID пользователей находящихся в ЧС:\n{ids}')
 
-@dp.message_handler(content_types=['text'], text='✅ Добавить в ЧС')
+@dp.message_handler(content_types=['text'], text='Добавить в ЧС')
 async def hanadler(message: types.Message, state: FSMContext):
 	func.join(chat_id=message.chat.id)
 	q.execute(f"SELECT block FROM users WHERE user_id = {message.chat.id}")
@@ -78,7 +78,7 @@ async def hanadler(message: types.Message, state: FSMContext):
 			await message.answer('Введите id пользователя, которого нужно заблокировать.\nДля отмены нажмите кнопку ниже', reply_markup=kb.back)
 			await st.item3.set()
 
-@dp.message_handler(content_types=['text'], text='❎ Убрать из ЧС')
+@dp.message_handler(content_types=['text'], text='Убрать из ЧС')
 async def hfandler(message: types.Message, state: FSMContext):
 	func.join(chat_id=message.chat.id)
 	q.execute(f"SELECT block FROM users WHERE user_id = {message.chat.id}")
@@ -88,7 +88,7 @@ async def hfandler(message: types.Message, state: FSMContext):
 			await message.answer('Введите id пользователя, которого нужно разблокировать.\nДля отмены нажмите кнопку ниже', reply_markup=kb.back)
 			await st.item4.set()
 
-@dp.message_handler(content_types=['text'], text='💬 Рассылка')
+@dp.message_handler(content_types=['text'], text='Рассылка')
 async def hangdler(message: types.Message, state: FSMContext):
 	func.join(chat_id=message.chat.id)
 	q.execute(f"SELECT block FROM users WHERE user_id = {message.chat.id}")
